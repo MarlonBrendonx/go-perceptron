@@ -63,8 +63,8 @@ func main() {
 	p := perceptron.New(2, 0.6, 100)
 	p.Fit(X, Y)
 
-	expectedInput := [2]float64{7.3, 3.5}
-	expectedOutput := 1
+	expectedInput := [2]float64{4.8, 3.4}
+	expectedOutput := 0
 
 	output := p.Predict(expectedInput[:])
 
