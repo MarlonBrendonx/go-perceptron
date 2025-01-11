@@ -15,3 +15,13 @@ To train the model, only SepalLengthCm and SepalWidthCm columns were used
 ```
 go run main.go
 ```
+
+### Expected Output ###
+
+```
+Expected Class: Setosa
+Output Class: Setosa
+
+Expected Class: Versicolor
+Output Class: Versicolor
+```
