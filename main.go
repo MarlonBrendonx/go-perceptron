@@ -19,6 +19,16 @@ func stringToFloat64(value string) float64 {
 	return float64(sepalLenght)
 }
 
+func getLabelClass(labels map[string]int, value int) string {
+	for class, label := range labels {
+		if label == value {
+			return class
+		}
+	}
+
+	return ""
+}
+
 func main() {
 	dataSet := "iris.csv"
 	var X [][]float64
@@ -60,14 +70,24 @@ func main() {
 
 	}
 
-	p := perceptron.New(2, 0.6, 100)
+	learningRate := 0.6
+	epochs := 100
+
+	p := perceptron.New(len(X[0]), learningRate, epochs)
 	p.Fit(X, Y)
 
 	expectedInput := [2]float64{4.8, 3.4}
-	expectedOutput := 0
+	expectedOutput := "Setosa"
 
 	output := p.Predict(expectedInput[:])
 
-	fmt.Printf("Classe esperada: %d \nClasse obtida: %d \n", int(expectedOutput), int(output))
+	fmt.Printf("Expected Class: %s \nOutput Class: %s \n\n", expectedOutput, getLabelClass(labels, int(output)))
+
+	expectedInput2 := [2]float64{6.4, 3.2}
+	expectedOutput2 := "Versicolor"
+
+	output2 := p.Predict(expectedInput2[:])
+
+	fmt.Printf("Expected Class: %s \nOutput Class: %s \n", expectedOutput2, getLabelClass(labels, int(output2)))
 
 }

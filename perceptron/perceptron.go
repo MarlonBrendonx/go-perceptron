@@ -1,9 +1,24 @@
 package perceptron
 
+import (
+	"math/rand"
+)
+
 type Perceptron struct {
 	weights      []float64
 	learningRate float64
 	epochs       int
+}
+
+func initializeRandomWeights(min, max float64, size int) []float64 {
+
+	weights := make([]float64, size)
+
+	for i := range weights {
+		weights[i] = min * rand.Float64() * (max - min)
+	}
+
+	return weights
 }
 
 func New(size int, learningRate float64, epochs int) *Perceptron {
@@ -13,10 +28,10 @@ func New(size int, learningRate float64, epochs int) *Perceptron {
 	}
 
 	if epochs == 0 {
-		epochs = 10
+		epochs = 20
 	}
 
-	weights := []float64{1.1, -0.6}
+	weights := initializeRandomWeights(-5.0, 5.0, size)
 
 	return &Perceptron{
 		weights:      weights[:],
