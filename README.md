@@ -1,8 +1,6 @@
 # GO Perceptron
 
-```
 ![perceptron](./imgs/perceptron.png)
-```
 
 A simple implementation of Perceptron in golang
 
