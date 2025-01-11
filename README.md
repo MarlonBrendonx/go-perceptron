@@ -18,7 +18,6 @@ go run main.go
 
 ### Expected Output ###
 
-For: 
 SepalLength = 4.8
 SepalWidth = 3.4
 
