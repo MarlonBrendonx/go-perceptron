@@ -19,10 +19,10 @@ go run main.go
 ### Expected Output ###
 
 SepalLength = 4.8 \
-SepalWidth = 3.4 \
+SepalWidth = 3.4 
 
 SepalLength = 6.4 \
-SepalWidth = 3.2 \
+SepalWidth = 3.2 
 
 ```
 Expected Class: Setosa
